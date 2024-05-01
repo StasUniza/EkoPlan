@@ -42,8 +42,8 @@ fun ButtonScreen(navController: NavController) {
 @Preview(showBackground = true, name = "Button Screen Preview")
 @Composable
 fun PreviewButtonScreen() {
-    val mockNavController = rememberNavController()
+    val navController = rememberNavController()
     EkoPlanTheme {
-        ButtonScreen(mockNavController)
+        ButtonScreen(navController)
     }
 }
