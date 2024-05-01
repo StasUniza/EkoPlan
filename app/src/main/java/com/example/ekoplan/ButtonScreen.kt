@@ -1,3 +1,4 @@
+package com.example.ekoplan
 // ButtonScreen.kt
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.BottomAppBar

@@ -1,3 +1,4 @@
+package com.example.ekoplan
 // AddExpensesScreen.kt
 
 import androidx.compose.foundation.layout.Box

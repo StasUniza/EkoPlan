@@ -1,3 +1,4 @@
+package com.example.ekoplan
 // NavGraph
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost

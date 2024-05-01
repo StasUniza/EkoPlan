@@ -1,12 +1,11 @@
 package com.example.ekoplan
 // MainActivity.kt
-import NavGraph
-import NavigationViewModel
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.ekoplan.ui.theme.EkoPlanTheme
@@ -18,7 +17,7 @@ class MainActivity : ComponentActivity() {
             EkoPlanTheme {
                 val navController = rememberNavController()
                 val navigationViewModel: NavigationViewModel = viewModel()
-                navigationViewModel.navController = navController // Správné nastavení
+                navigationViewModel.navController = navController
                 AppContent(navigationViewModel)
             }
         }
