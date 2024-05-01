@@ -25,7 +25,7 @@ import com.example.ekoplan.ui.theme.EkoPlanTheme
 fun ExpensesScreen(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()) {
         TopAppBar(
-            title = { Text("Výdavky") },
+            title = { Text("Expenses") },
             navigationIcon = {
                 IconButton(onClick = { navController.navigateUp() }) {
                     Icon(

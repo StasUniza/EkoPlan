@@ -8,6 +8,6 @@ fun NavGraph(navController: NavHostController) {  // Použitie správneho typu
     NavHost(navController = navController, startDestination = "buttonScreen") {
         composable("buttonScreen") { ButtonScreen(navController) }
         composable("expensesScreen") { ExpensesScreen(navController) }
-        composable("addExpensesScreen") { AddExpensesScreen() }
+        composable("addExpensesScreen") { AddExpensesScreen(navController) }
     }
 }
