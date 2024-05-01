@@ -22,12 +22,12 @@ import com.example.ekoplan.ui.theme.EkoPlanTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExpensesScreen(navController: NavController) {
+fun ExpensesScreen(navigationViewModel: NavigationViewModel) {
     Box(modifier = Modifier.fillMaxSize()) {
         TopAppBar(
             title = { Text("Expenses") },
             navigationIcon = {
-                IconButton(onClick = { navController.navigateUp() }) {
+                IconButton(onClick = { navigationViewModel.navigateUp() }) {
                     Icon(
                         imageVector = Icons.Filled.ArrowBack,
                         contentDescription = "Back"
@@ -53,7 +53,7 @@ fun ExpensesScreen(navController: NavController) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewExpensesScreen() {
-    val navController = rememberNavController()
+    val navController = NavigationViewModel()
     EkoPlanTheme {
         ExpensesScreen(navController)
     }

@@ -1,28 +1,32 @@
-// MainActivity.kt
 package com.example.ekoplan
+// MainActivity.kt
 import NavGraph
+import NavigationViewModel
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
-
 import com.example.ekoplan.ui.theme.EkoPlanTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EkoPlanTheme{
-                AppContent()
+            EkoPlanTheme {
+                val navController = rememberNavController()
+                val navigationViewModel: NavigationViewModel = viewModel()
+                navigationViewModel.navController = navController // Správné nastavení
+                AppContent(navigationViewModel)
             }
-
         }
     }
 }
 
+
 @Composable
-fun AppContent() {
-    val navController = rememberNavController()
-    NavGraph(navController = navController)
+fun AppContent(navigationViewModel: NavigationViewModel) {
+    NavGraph(navigationViewModel = navigationViewModel)
 }
