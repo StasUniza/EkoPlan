@@ -15,6 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.ekoplan.ui.theme.EkoPlanTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -40,5 +43,18 @@ fun ExpensesScreen(navController: NavController) {
         ) {
             Text("Toto sú vaše výdavky", style = MaterialTheme.typography.labelLarge)
         }
+    }
+
+
+
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewExpensesScreen() {
+    val navController = rememberNavController()
+    EkoPlanTheme {
+        ExpensesScreen(navController)
     }
 }

@@ -1,5 +1,7 @@
 // ButtonScreen.kt
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -8,12 +10,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.ekoplan.ui.theme.EkoPlanTheme
 
 
 @Composable
 fun ButtonScreen(navController: NavController) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -28,5 +35,15 @@ fun ButtonScreen(navController: NavController) {
         }) {
             Text("Pridaj výdavky", style = MaterialTheme.typography.labelLarge)
         }
+    }
+}
+
+
+@Preview(showBackground = true, name = "Button Screen Preview")
+@Composable
+fun PreviewButtonScreen() {
+    val mockNavController = rememberNavController() // Toto je pouze pro účely náhledu.
+    EkoPlanTheme {  // Předpokládám, že používáte vlastní téma
+        ButtonScreen(navController = mockNavController)
     }
 }
